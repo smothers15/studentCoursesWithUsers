@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    div.form-container
+        h3 Login
+        form(action='/register-student' method='post')
+            div.form-input
+                label(for='email') Email
+                input(id='email' name='email' )
+
+            div.form-input
+                label(for='password') Password
+                input(id='password' name='password' type='password')
+            div.form-buttons
+                button.button.primary(type='submit') Login
