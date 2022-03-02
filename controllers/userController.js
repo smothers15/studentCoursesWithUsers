@@ -4,7 +4,11 @@ const passport = require('passport');
 
 //render student registration form
 module.exports.renderStudentRegistrationForm = function(req, res){
-    res.render('user/register');
+    res.render('user/registerStudent');
+}
+
+module.exports.renderStaffRegistrationForm = function(req, res){
+    res.render('user/registerStaff');
 }
 
 //register student account
@@ -34,3 +38,12 @@ module.exports.login = passport.authenticate('local',{
     failureRedirect: '/login',
     failureMessage: true
 })
+
+//render the login form
+module.exports.renderLoginForm = function(req, res){
+    let errorMessages = [];
+    if(req.session.messages){
+        errorMessages = req.session.messages;
+    }
+    res.render('user/login', {errorMessages})
+}

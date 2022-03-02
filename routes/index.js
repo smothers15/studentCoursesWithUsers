@@ -33,8 +33,10 @@ router.get('/courses/:courseId/removeStudent/:studentId', courseController.remov
 
 router.get('/register-student', userController.renderStudentRegistrationForm);
 router.post('/register-student', userController.registerStudent);
+router.get('/register-staff', userController.renderStaffRegistrationForm);
 router.get('/login', userController.renderLoginForm);
 router.post('/login', userController.login);
+
 
 
 module.exports = router;

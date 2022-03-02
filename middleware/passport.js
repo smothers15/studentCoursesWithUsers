@@ -16,7 +16,7 @@ async function validateUser(username, password, done){
     return done(null, {id: user.id});
 }
 
-passport.user(
+passport.use(
     new Strategy({
             usernameField: 'email',
             passwordField: 'password'
